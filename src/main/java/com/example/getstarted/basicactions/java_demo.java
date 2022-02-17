@@ -11,7 +11,7 @@ public class java_demo extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-    resp.getWriter().write("Hello world - GCE!");
+    resp.getWriter().write("Hello world, I am running from an instance on compute engine.");
     resp.setStatus(HttpServletResponse.SC_OK);
   }
 }
