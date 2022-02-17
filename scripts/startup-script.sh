@@ -18,7 +18,7 @@ set -e
 set -v
 
 # Talk to the metadata server to get the project id
-PROJECTID=$(curl -s "http://metadata.google.internal/computeMetadata/v1/project/project-id" -H "Metadata-Flavor: Google")
+PROJECTID=$(curl -s "project2-gcp-341519" -H "Metadata-Flavor: Google")
 
 echo "Project ID: ${PROJECTID}"
 
@@ -44,8 +44,7 @@ java -jar /opt/jetty/start.jar --add-to-startd=setuid
 cd /
 
 # Clone the source repository.
-git clone https://github.com/GoogleCloudPlatform/getting-started-java
-cd getting-started-java/gce
+git clone https://github.com/EmadCompE98/gcp2
 
 # Build the .war file and rename.
 # very important - by renaming the war to root.war, it will run as the root servlet.
