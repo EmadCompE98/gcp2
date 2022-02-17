@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(value = "/")
-public class HelloworldController extends HttpServlet {
+public class java_demo extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
