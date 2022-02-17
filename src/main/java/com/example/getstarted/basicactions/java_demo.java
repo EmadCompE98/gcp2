@@ -1,22 +1,17 @@
-package com.example.appengine.springboot;
+package com.example.getstarted.basicactions;
 
-// [START gae_java11_helloworld]
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import java.io.IOException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-@SpringBootApplication
-@RestController
-public class SpringbootApplication {
+@WebServlet(value = "/")
+public class HelloworldController extends HttpServlet {
 
-  public static void main(String[] args) {
-    SpringApplication.run(SpringbootApplication.class, args);
+  @Override
+  public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    resp.getWriter().write("Hello world - GCE!");
+    resp.setStatus(HttpServletResponse.SC_OK);
   }
-
-  @GetMapping("/")
-  public String hello() {
-    return "Hello world!";
-  }
-
 }
